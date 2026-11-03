@@ -1,0 +1,13 @@
+build-pc/
+simroot/
+shots*/
+*.o
+__pycache__/
+itds/build/
+itds/biradx-itds
+itds/Makefile
+itds/.qmake.stash
+itds/records/
+itds/eeprom.bin
+itds/itds.ini
+itds/.biradx-itds.lock

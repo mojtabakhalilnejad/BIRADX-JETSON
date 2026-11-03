@@ -1,0 +1,62 @@
+# the healthy-tissue samples of the patient: several before the lesion, shown in DETAILS and in the log
+id A3K7
+wait 1500
+load air 60
+tap 340 150
+wait 300
+tap 637 408
+wait 9500
+tap 512 408
+wait 300
+tap 320 560
+wait 300
+tap 320 560
+wait 400
+shot 01_case_open_needle_ready
+tap 218 150
+wait 300
+shot 02_sheet
+load lesion 2800 6
+tap 640 448
+wait 4500
+shot 03_h1_kept
+load lesion 3300 8
+tap 720 448
+wait 4500
+load lesion 4100 4
+tap 720 448
+wait 4500
+shot 04_three_samples
+print
+tap 300 448
+wait 300
+shot 05_main_with_count
+load lesion 850 -4
+tap 320 560
+wait 4000
+tap 320 560
+wait 4000
+shot 06_readings
+tap 362 402
+wait 300
+shot 07_details_median
+tap 505 106
+wait 200
+shot 08_details_h2
+tap 958 110
+wait 200
+tap 167 560
+wait 400
+tap 913 35
+wait 400
+tap 400 180
+wait 300
+shot 09_log_rows
+tap 400 262
+wait 300
+shot 10_log_reading_details
+tap 958 110
+wait 300
+tap 400 322
+wait 300
+shot 11_log_sample_details

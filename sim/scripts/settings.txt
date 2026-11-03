@@ -1,0 +1,43 @@
+wait 1200
+id A3K7
+tap 988 35
+wait 300
+drag 296 180 296 420
+drag 440 420 440 180
+tap 584 460
+drag 728 460 728 140
+wait 800
+tap 153 88
+wait 300
+shot 21_protocol
+tap 251 88
+wait 300
+shot 22_needle
+tap 412 88
+wait 300
+shot 23_rules
+tap 300 330
+wait 300
+shot 24_rule_open
+drag 500 500 500 150
+wait 200
+shot 25_rule_open_scrolled
+tap 497 88
+wait 300
+shot 26_sound
+tap 592 88
+wait 300
+shot 27_security
+tap 870 157
+wait 300
+shot 28_passcode_sheet
+tap 392 572
+wait 200
+tap 688 88
+wait 300
+shot 29_about
+tap 56 88
+wait 200
+tap 935 235
+wait 300
+shot 30_clock

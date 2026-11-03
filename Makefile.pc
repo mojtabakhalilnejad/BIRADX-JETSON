@@ -1,0 +1,49 @@
+# PC build of the decision core, the application's tests and the simulator (no hardware needed).
+#   make -f Makefile.pc test apptest sim
+CXX ?= g++
+CXXFLAGS = -std=c++17 -O2 -Wall -Wextra -fno-exceptions -Ibirxcore
+CORE_SRC = $(wildcard birxcore/*.cpp)
+BUILD = build-pc
+CORE_OBJ = $(patsubst birxcore/%.cpp,$(BUILD)/core/%.o,$(CORE_SRC))
+
+$(BUILD)/core/%.o: birxcore/%.cpp
+	@mkdir -p $(dir $@)
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+$(BUILD)/selftest: $(CORE_OBJ) tests/selftest.cpp
+	$(CXX) -std=c++17 -O2 -Ibirxcore tests/selftest.cpp $(CORE_OBJ) -o $@
+
+test: $(BUILD)/selftest
+	cd $(BUILD) && ./selftest
+
+clean:
+	rm -rf $(BUILD)
+.PHONY: test clean
+
+APP_SRC = $(wildcard app/*.cpp)
+APP_OBJ = $(patsubst app/%.cpp,$(BUILD)/app/%.o,$(APP_SRC))
+SIMP_OBJ = $(BUILD)/sim/platform_sim.o $(BUILD)/sim/sim_device.o
+$(BUILD)/app/%.o: app/%.cpp app/*.h
+	@mkdir -p $(dir $@)
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+$(BUILD)/sim/%.o: sim/%.cpp sim/*.h
+	@mkdir -p $(dir $@)
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+$(BUILD)/app_test: $(CORE_OBJ) $(APP_OBJ) $(SIMP_OBJ) tests/app_test.cpp
+	$(CXX) $(CXXFLAGS) tests/app_test.cpp $(CORE_OBJ) $(APP_OBJ) $(SIMP_OBJ) -o $@
+apptest: $(BUILD)/app_test
+	cd $(BUILD) && ./app_test
+.PHONY: apptest
+
+GUI_SRC = $(wildcard gui/*.cpp)
+GUI_OBJ = $(patsubst gui/%.cpp,$(BUILD)/gui/%.o,$(GUI_SRC)) $(BUILD)/fonts/fonts_data.o
+$(BUILD)/gui/%.o: gui/%.cpp gui/*.h app/*.h
+	@mkdir -p $(dir $@)
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+$(BUILD)/fonts/fonts_data.o: fonts/fonts_data.cpp fonts/fonts.h
+	@mkdir -p $(dir $@)
+	$(CXX) $(CXXFLAGS) -O0 -c $< -o $@
+$(BUILD)/sim_main: $(CORE_OBJ) $(APP_OBJ) $(SIMP_OBJ) $(GUI_OBJ) sim/sim_main.cpp
+	$(CXX) $(CXXFLAGS) sim/sim_main.cpp $(CORE_OBJ) $(APP_OBJ) $(SIMP_OBJ) $(GUI_OBJ) -o $@
+sim: $(BUILD)/sim_main
+.PHONY: sim

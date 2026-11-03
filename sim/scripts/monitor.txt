@@ -1,0 +1,15 @@
+wait 3500
+id A3K7
+tap 988 35
+wait 300
+drag 296 180 296 420
+drag 440 420 440 180
+tap 584 460
+drag 728 460 728 140
+wait 900
+shot 70_settings_device
+tap 915 245
+wait 2500
+tap 130 560
+wait 7000
+shot 71_link_monitor

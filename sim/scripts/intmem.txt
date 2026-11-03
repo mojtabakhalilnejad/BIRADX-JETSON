@@ -1,0 +1,30 @@
+# no SD card; the internal memory holds the previous firmware's data
+boot sd 0
+boot intmem 1
+wait 3500
+id A3K7
+wait 300
+shot 60_no_store
+tap 988 35
+wait 300
+drag 296 180 296 420
+drag 440 420 440 180
+tap 584 460
+drag 728 460 728 140
+wait 900
+shot 61_settings_internal_memory
+tap 935 312
+wait 300
+shot 62_use_internal_memory
+tap 230 194
+wait 300
+shot 63_old_contents_saved
+tap 790 548
+wait 400
+shot 64_internal_memory_in_use
+tap 988 35
+wait 300
+load lesion 850 -5
+tap 75 560
+wait 4000
+shot 65_reading_recorded_internally

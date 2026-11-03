@@ -1,0 +1,20 @@
+# Start case then Cancel leaves a NEW case open (as on the Jetson); so does a tap on the case strip
+id A3K7
+wait 1500
+print
+tap 320 560
+wait 300
+shot 01_intake_new
+print
+tap 320 560
+wait 300
+shot 02_after_cancel
+print
+tap 200 110
+wait 300
+shot 03_strip_tapped
+print
+tap 320 560
+wait 300
+shot 04_second_case_open
+print

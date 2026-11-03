@@ -1,0 +1,10 @@
+fresh
+wait 1500
+shot 01_boot_noid
+id A3K7
+wait 500
+shot 02_ready
+load lesion 850 -5
+tap 380 560
+wait 2500
+shot 03_test_reading

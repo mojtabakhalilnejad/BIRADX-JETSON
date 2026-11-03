@@ -1,0 +1,21 @@
+# readings taken with no case open can be given a pathology result (as on the Jetson)
+id 1110
+wait 1500
+load lesion 1500 -5
+pedal
+wait 4000
+tap 913 35
+wait 400
+tap 400 180
+wait 300
+shot 01_nocase_row
+tap 400 565
+wait 400
+shot 02_sheet_list
+tap 400 118
+tap 308 385
+wait 200
+shot 03_chosen
+tap 512 456
+wait 300
+shot 04_saved

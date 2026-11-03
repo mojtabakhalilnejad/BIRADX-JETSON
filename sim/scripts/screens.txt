@@ -1,0 +1,167 @@
+# every screen and sheet, opened directly (show): for comparing the layouts — run it wide and upright:
+#   sim/run.sh sim/scripts/screens.txt shots        BIRADX_SIM_PORTRAIT=1 sim/run.sh sim/scripts/screens.txt shots-upright
+wait 1500
+shot a00_measure_noid
+id A3K7
+settle 2
+show measure
+shot a01_measure_ready
+show lock
+shot a02_lock
+show measure
+show settings 0
+shot a03_set0
+show settings 1
+shot a04_set1
+show settings 2
+shot a05_set2
+show settings 3
+shot a06_set3
+show settings 4
+shot a07_set4
+show settings 5
+shot a08_set5
+show settings 6
+shot a09_set6
+show settings 7
+shot a10_set7
+show settings 8
+shot a11_set8
+show keyboard
+shot a12_keyboard
+show close
+show numpad
+shot a13_numpad
+show close
+show clock
+shot a14_clock
+show close
+show passcode
+shot a15_passcode
+show close
+show measure
+show intake
+shot a16_intake_empty
+intake age 54
+intake birads 4A
+intake lesion_size 14
+intake side Left
+intake clock 10
+intake needle_lot L7
+intake needle_serial N-123
+show intake
+shot a17_intake_filled
+begincase
+intake age 54
+intake birads 4A
+intake lesion_size 14
+intake side Left
+intake clock 10
+intake needle_lot L7
+intake needle_serial N-123
+commit
+show measure
+shot a18_case_open
+load air 60
+show calib
+shot a19_calib
+cal
+wait 9000
+shot a20_calibrated
+show close
+load saline 150 60 300 0.7
+show dip
+shot a21_dip
+dip 22
+wait 9000
+shot a22_dipped
+show close
+load lesion 850 2
+sweep
+wait 3500
+shot a23_reading
+sweep
+wait 3500
+sweep
+wait 3500
+shot a24_readings3
+show details
+shot a25_details
+show close
+show tissue
+shot a26_tissue
+show close
+show outcome
+shot a27_outcome
+show close
+show caseedit 1
+shot a28_caseedit
+show close
+show delete
+shot a29_delete
+show close
+show monitor
+shot a30_monitor
+show close
+show logs
+wait 500
+shot a31_logs
+show allfiles
+shot a32_allfiles
+show close
+show train
+shot a33_train
+show close
+show tag
+shot a34_tag
+show close
+show settings 6
+show lotsheet 0
+shot a35_lotsheet
+show close
+show settings 0
+drag 300 550 300 150
+shot b01_device_scrolled
+show settings 1
+drag 300 550 300 150
+shot b02_protocol_scrolled
+show settings 2
+drag 300 550 300 150
+shot b03_needle_scrolled
+show settings 3
+show rule 1
+shot b04_rule_open
+show rule -1
+show caserule
+drag 300 550 300 150
+drag 300 550 300 150
+drag 300 550 300 150
+shot b05_rules_scrolled
+show settings 7
+drag 300 550 300 150
+shot b06_lots_scrolled
+show settings 8
+drag 300 550 300 150
+shot b07_training_scrolled
+drag 300 550 300 150
+shot b08_training_scrolled2
+drag 300 550 300 150
+drag 300 550 300 150
+shot b09_training_scrolled3
+show numneg
+shot b10_numneg
+show close
+show logs
+show logopen
+wait 300
+shot b11_logs_open
+show settings 4
+drag 300 550 300 150
+shot b12_sound_scrolled
+lotadd L7 1 3 3 3
+show settings 7
+shot b13_lots_with_lot
+show lotsheet 0
+wait 300
+shot b14_lotsheet
+show close

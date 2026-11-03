@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=BIRADx
+Comment=BIRADx-ITDS — impedimetric tumour detection
+Exec=@TARGET@/biradx-itds
+Path=@TARGET@
+Terminal=false
+X-GNOME-Autostart-enabled=true
+X-GNOME-Autostart-Delay=3

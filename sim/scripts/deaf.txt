@@ -1,0 +1,9 @@
+# a measurement unit that does not act on [R]: one request, then the sentence
+wait 3500
+id A3K7
+alive 1 0
+tap 75 560
+wait 2000
+shot 50_asked
+wait 5500
+shot 51_not_answered

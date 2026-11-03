@@ -1,0 +1,91 @@
+# a full case on the simulated measurement unit (coordinates are the 1024x600 panel)
+wait 1500
+shot 01_measure_no_device_id
+tap 988 35
+wait 300
+drag 296 180 296 420
+drag 440 420 440 180
+tap 584 460
+drag 728 460 728 140
+wait 800
+shot 02_settings_device
+tap 935 157
+wait 300
+shot 03_keyboard
+tap 392 484
+wait 200
+id A3K7
+tap 988 35
+wait 300
+shot 04_measure_ready
+tap 320 560
+wait 300
+shot 05_intake_empty
+tap 500 155
+wait 300
+shot 06_number_pad
+tap 392 460
+intake age 54
+intake birads 4A
+intake lesion_size 14
+intake side Left
+intake clock 10
+intake needle_lot L7
+intake needle_serial N-123
+wait 300
+shot 07_intake_filled
+tap 672 564
+wait 400
+shot 08_measure_case_open
+load air 60
+tap 340 150
+wait 300
+shot 09_calibrate_sheet
+tap 637 408
+wait 2500
+shot 10_calibrating
+wait 7000
+shot 11_calibrated
+tap 512 408
+wait 300
+load lesion 850 2
+tap 320 560
+wait 900
+shot 12_sweep_in_progress
+wait 2500
+shot 13_first_reading
+print
+tap 320 560
+wait 3200
+tap 320 560
+wait 3200
+shot 14_stopped_early
+print
+tap 362 402
+wait 300
+shot 15_details
+tap 958 110
+wait 300
+tap 167 560
+wait 400
+shot 16_after_end_case
+tap 913 35
+wait 600
+shot 17_logs_today
+tap 400 180
+wait 300
+shot 18_logs_expanded
+tap 927 565
+wait 400
+shot 19_diagnostics_on
+tap 661 356
+wait 300
+shot 20_pathology_for_case
+tap 308 385
+tap 512 456
+shot 21_pathology_saved
+wait 1600
+shot 22_logs_after_save
+tap 927 565
+wait 400
+shot 23_diagnostics_stopped

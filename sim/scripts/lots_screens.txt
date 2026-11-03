@@ -1,0 +1,63 @@
+# the Lots screens with a reference and a lot measured (lottest), then Training with two labels — wide and upright
+wait 1500
+id A3K7
+settle 2
+lotadd REF 1 2 2 1
+load air 60
+lottest 0 1 0 22
+wait 4000
+lottest 0 1 0 22
+wait 4000
+lottest 0 2 0 22
+wait 4000
+lottest 0 2 0 22
+wait 4000
+load saline 150 60 300 0.7
+lottest 0 1 1 22
+wait 8000
+lottest 0 1 1 22
+wait 8000
+lottest 0 2 1 22
+wait 8000
+lottest 0 2 1 22
+wait 8000
+lotadd L8 0 2 2 1
+load air 70
+lottest 1 1 0 22
+wait 4000
+lottest 1 1 0 22
+wait 4000
+lottest 1 2 0 22
+wait 4000
+lottest 1 2 0 22
+wait 4000
+load saline 170 70 350 0.7
+lottest 1 1 1 22
+wait 8000
+lottest 1 1 1 22
+wait 8000
+lottest 1 2 1 22
+wait 8000
+lottest 1 2 1 22
+wait 8000
+show settings 7
+shot c01_lots
+show lotsheet 1
+shot c02_lot_tests
+show lotview 1
+shot c03_lot_result
+show lotview 2
+shot c04_lot_compare
+show lotview 3
+shot c05_lot_raw
+show lotpage 2
+shot c06_lot_raw_needle
+show close
+matlabel Saline
+matlabel Apple
+show settings 8
+show matsel
+drag 300 550 300 150
+shot c07_training_label
+show tag
+shot c08_tag

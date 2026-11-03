@@ -1,0 +1,12 @@
+# error paths: no link, then a working case to exercise rules/logs sheets
+alive 0 0
+wait 7000
+shot 40_no_link
+alive 1 1
+wait 1500
+id A3K7
+wait 300
+shot 41_link_back
+load lesion 4200 -5
+tap 380 560
+wait 300
